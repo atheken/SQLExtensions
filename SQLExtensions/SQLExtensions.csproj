@@ -47,14 +47,27 @@
   <ItemGroup>
     <Compile Include="Metaphone\DoubleMetaphone.cs" />
     <Compile Include="Metaphone\ShortDoubleMetaphone.cs" />
+    <Compile Include="SQLReflectionHelper.cs" />
     <Compile Include="SqlRegularExpressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlSoundsLike.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GenerateInstall.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateInstall1.sql</LastGenOutput>
+    </None>
+    <None Include="GenerateInstall1.sql">
+      <DependentUpon>GenerateInstall.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </None>
     <None Include="SQL_Scripts\CreateFunctions.sql" />
     <None Include="SQL_Scripts\DropFunctions.sql" />
     <None Include="SQL_Scripts\EnableCLRIntegration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

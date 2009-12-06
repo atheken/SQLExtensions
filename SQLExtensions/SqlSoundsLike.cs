@@ -38,7 +38,7 @@ namespace SQLExtensions
         }
 
         /// <summary>
-        /// Returns a ushort key from a double metaphone calculation
+        /// Returns a short key from a double metaphone calculation
         /// (although this is less readable, it allows for much better index and storage performance)
         /// </summary>
         /// <param name="data"></param>
@@ -51,7 +51,7 @@ namespace SQLExtensions
         }
 
         /// <summary>
-        /// Returns a ushort alternate key from a double metaphone calculation
+        /// Returns a short alternate key from a double metaphone calculation
         /// (although this is less readable, it allows for much better index and storage performance)
         /// </summary>
         /// <param name="data"></param>
