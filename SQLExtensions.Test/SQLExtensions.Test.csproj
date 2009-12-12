@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="SqlRegularExpressionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlSoundsLikeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SQLExtensions\SQLExtensions.csproj">

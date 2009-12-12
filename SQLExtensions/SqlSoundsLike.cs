@@ -19,7 +19,10 @@ namespace SQLExtensions
         {
             string primaryKey = null;
             string secondaryKey = null;
-            ShortDoubleMetaphone.doubleMetaphone(data, ref primaryKey, ref secondaryKey);
+            if (data != null)
+            {
+                ShortDoubleMetaphone.doubleMetaphone(data, ref primaryKey, ref secondaryKey);
+            }
             return primaryKey;
         }
 
@@ -33,7 +36,10 @@ namespace SQLExtensions
         {
             string primaryKey = null;
             string secondaryKey = null;
-            ShortDoubleMetaphone.doubleMetaphone(data, ref primaryKey, ref secondaryKey);
+            if (data != null)
+            {
+                ShortDoubleMetaphone.doubleMetaphone(data, ref primaryKey, ref secondaryKey);
+            }
             return secondaryKey;
         }
 
@@ -46,8 +52,12 @@ namespace SQLExtensions
         [SqlFunction(Name = "ShortMetaphone", IsDeterministic = true)]
         public static short ShortMetaphone(String data)
         {
-            ShortDoubleMetaphone meta = new ShortDoubleMetaphone(data);
-            return (short) meta.PrimaryShortKey;
+            short retval = 0;
+            if (!String.IsNullOrEmpty(data))
+            {
+                retval = (short)new ShortDoubleMetaphone(data).PrimaryShortKey;
+            }
+            return retval;
         }
 
         /// <summary>
@@ -59,8 +69,12 @@ namespace SQLExtensions
         [SqlFunction(Name = "ShortMetaphoneAlternate", IsDeterministic = true)]
         public static short ShortMetaphoneAlternate(String data)
         {
-            ShortDoubleMetaphone meta = new ShortDoubleMetaphone(data);
-            return (short) meta.AlternateShortKey;
+            short retval = 0;
+            if (!String.IsNullOrEmpty(data))
+            {
+                retval = (short)new ShortDoubleMetaphone(data).AlternateShortKey;
+            }
+            return retval;
         }
     }
 
