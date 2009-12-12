@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLExtensions", "SQLExtensions\SQLExtensions.csproj", "{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1BC329BF-A7DF-43B1-A69B-38E72A0C64D1}"
+	ProjectSection(SolutionItems) = preProject
+		SQLExtensions.vsmdi = SQLExtensions.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLExtensions.Test", "SQLExtensions.Test\SQLExtensions.Test.csproj", "{74694C34-2FE0-440C-A0F2-6A0D84577B23}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SQLExtensions.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -13,6 +23,10 @@ Global
 		{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74694C34-2FE0-440C-A0F2-6A0D84577B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74694C34-2FE0-440C-A0F2-6A0D84577B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74694C34-2FE0-440C-A0F2-6A0D84577B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74694C34-2FE0-440C-A0F2-6A0D84577B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

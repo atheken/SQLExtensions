@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}</ProjectGuid>
+    <ProjectGuid>{74694C34-2FE0-440C-A0F2-6A0D84577B23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQLExtensions</RootNamespace>
-    <AssemblyName>SQLExtensions</AssemblyName>
+    <RootNamespace>SQLExtensions.Test</RootNamespace>
+    <AssemblyName>SQLExtensions.Test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,29 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checksums\CRC32.cs" />
-    <Compile Include="Metaphone\DoubleMetaphone.cs" />
-    <Compile Include="Metaphone\ShortDoubleMetaphone.cs" />
-    <Compile Include="SQLReflectionHelper.cs" />
-    <Compile Include="SqlRegularExpressions.cs" />
+    <Compile Include="SqlRegularExpressionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlSoundsLike.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InstallAssembly.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>InstallAssembly.sql</LastGenOutput>
-    </None>
-    <None Include="InstallAssembly.sql">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InstallAssembly.tt</DependentUpon>
-    </None>
-    <None Include="SQL_Scripts\CreateFunctions.sql" />
-    <None Include="SQL_Scripts\DropFunctions.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+    <ProjectReference Include="..\SQLExtensions\SQLExtensions.csproj">
+      <Project>{40B2567B-5509-487E-AAB0-05AF9F2EBEFD}</Project>
+      <Name>SQLExtensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

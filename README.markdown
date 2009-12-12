@@ -1,11 +1,10 @@
-SQLExtentions
-=============
+# SQLExtentions
 
 This assembly fills in some gaps in SQL Server. 
 
 Please feel free to contact Andrew Theken (theken.1@osu.edu) if you have questions, or would like to contribute.
 
-LICENSE:
+## LICENSE:
 
 This library is made available under the MIT License (http://www.opensource.org/licenses/mit-license.php), some code is made available under different licensing - when this is the case, the appropriate license has been included at the top of the source file.
 
@@ -29,7 +28,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-INSTALLATION:
+## INSTALLATION:
 
 0) Enable CLR Integration on the target SQL Server:
 	

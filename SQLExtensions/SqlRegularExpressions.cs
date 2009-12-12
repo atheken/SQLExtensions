@@ -36,10 +36,13 @@ namespace SQLExtensions
         public static String Match(String regexPattern, String data)
         {
             String retval = null;
-            var m = new Regex(regexPattern).Match(data);
-            if (m.Success)
+            if (data != null)
             {
-                retval = m.Value;
+                var m = new Regex(regexPattern).Match(data);
+                if (m.Success)
+                {
+                    retval = m.Value;
+                }
             }
             return retval;
         }
@@ -56,7 +59,7 @@ namespace SQLExtensions
         {
             String retval = null;
             var m = new Regex(regexPattern).Match(data);
-            if (m.Success && m.Groups.Count >= group - 1)
+            if (m.Success && m.Groups.Count >= group)
             {
                 retval = m.Groups[group].Value;
             }
@@ -73,7 +76,7 @@ namespace SQLExtensions
         [SqlMethod(Name="RegexReplace", IsDeterministic=true)]
         public static String RegexReplace(String regexPattern, String data, String replacement)
         {
-            return new Regex(regexPattern).Replace(data, replacement);
+            return data == null ? null : new Regex(regexPattern).Replace(data, replacement);
         }
 
         //here would be a useful place to demonstrate a Table-Valued Function def on Matches.
